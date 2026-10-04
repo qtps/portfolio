@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --color-coral: #ff534a;
@@ -9,6 +9,17 @@
 }
 
 @layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --color-coral: #ff7169;
+    --color-ink: #f8fafc;
+    --color-cream: #111827;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -18,5 +29,61 @@
     background-color: var(--color-cream);
     color: #333;
     font-family: var(--font-roboto), Verdana, serif;
+  }
+
+  .dark body {
+    color: #d1d5db;
+  }
+
+  .dark .bg-white {
+    background-color: #1f2937 !important;
+  }
+
+  .dark .bg-ink {
+    background-color: #1f2937 !important;
+  }
+
+  .dark .bg-gray-100 {
+    background-color: #374151 !important;
+  }
+
+  .dark .bg-gray-200 {
+    background-color: #374151 !important;
+  }
+
+  .dark .bg-gray-300 {
+    background-color: #4b5563 !important;
+  }
+
+  .dark .text-gray-500 {
+    color: #9ca3af;
+  }
+
+  .dark .text-gray-600 {
+    color: #d1d5db;
+  }
+
+  .dark .text-gray-700 {
+    color: #e5e7eb;
+  }
+
+  .dark .text-gray-800 {
+    color: #f3f4f6;
+  }
+
+  .dark .border-gray-200,
+  .dark .border-gray-300 {
+    border-color: #374151;
+  }
+
+  .dark input,
+  .dark textarea {
+    background-color: #1f2937;
+    color: #f3f4f6;
+  }
+
+  .dark input::placeholder,
+  .dark textarea::placeholder {
+    color: #9ca3af;
   }
 }
