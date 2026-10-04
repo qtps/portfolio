@@ -1,15 +1,111 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import gsap from 'gsap';
 import { navigation, pageLinks } from '../utils/portfolio-data';
 import { ThemeToggle } from './theme-toggle';
+
+type AnimatedNavItemProps = {
+  children: ReactNode;
+  className: string;
+  href?: string;
+  active?: boolean;
+  onClick?: () => void;
+};
+
+function AnimatedNavItem({
+  children,
+  className,
+  href,
+  active = false,
+  onClick,
+}: AnimatedNavItemProps) {
+  const underline = useRef<HTMLSpanElement>(null);
+  const underlineTween = useRef<gsap.core.Tween | null>(null);
+
+  useEffect(() => {
+    if (!underline.current) return;
+
+    underlineTween.current = gsap.fromTo(
+      underline.current,
+      { scaleX: 0, transformOrigin: 'left center' },
+      {
+        scaleX: 1,
+        duration: 0.45,
+        ease: 'power3.out',
+        paused: true,
+      },
+    );
+
+    return () => {
+      if (underline.current) {
+        gsap.killTweensOf(underline.current);
+      }
+      underlineTween.current?.kill();
+      underlineTween.current = null;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (active) {
+      underlineTween.current?.play();
+    } else {
+      underlineTween.current?.reverse();
+    }
+  }, [active]);
+
+  const showUnderline = () => {
+    underlineTween.current?.play();
+  };
+
+  const hideUnderline = () => {
+    if (!active) {
+      underlineTween.current?.reverse();
+    }
+  };
+
+  const itemProps = {
+    onClick,
+    onMouseEnter: showUnderline,
+    onMouseLeave: hideUnderline,
+    className: `relative ${className}`,
+  };
+
+  const itemContent = (
+    <>
+      {children}
+      <span
+        ref={underline}
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 bottom-0 left-0 h-px origin-left scale-x-0"
+        style={{ backgroundColor: 'var(--color-ink)' }}
+      />
+    </>
+  );
+
+  return href ? (
+    <Link href={href} {...itemProps}>
+      {itemContent}
+    </Link>
+  ) : (
+    <button type="button" {...itemProps}>
+      {itemContent}
+    </button>
+  );
+}
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [pagesOpen, setPagesOpen] = useState(false);
+  const pathname = usePathname();
   const closeMenu = () => setMenuOpen(false);
+  const isActivePath = (href: string) =>
+    href === '/'
+      ? pathname === '/'
+      : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <>
@@ -49,29 +145,35 @@ export function SiteHeader() {
               <ul className="space-y-2">
                 {navigation.map(([id, label]) => (
                   <li className="sidebar-item" key={id}>
-                    <Link
+                    <AnimatedNavItem
                       href={id === 'home' ? '/' : `/${id}`}
+                      active={isActivePath(id === 'home' ? '/' : `/${id}`)}
                       onClick={closeMenu}
                       className="text-ink hover:text-coral block border-b border-gray-200 py-3 text-lg transition"
                     >
                       {label}
-                    </Link>
+                    </AnimatedNavItem>
                   </li>
                 ))}
                 <li className="sidebar-item">
-                  <button
+                  <AnimatedNavItem
                     onClick={() => setPagesOpen(!pagesOpen)}
                     className="text-ink flex w-full justify-between border-b border-gray-200 py-3 text-lg"
                   >
                     Pages <span>{pagesOpen ? '−' : '+'}</span>
-                  </button>
+                  </AnimatedNavItem>
                   {pagesOpen && (
                     <ul className="space-y-2 py-3 pl-4 text-sm text-gray-600">
                       {pageLinks.map(({ label, href }) => (
                         <li key={href}>
-                          <Link href={href} onClick={closeMenu}>
-                            {label}
-                          </Link>
+                                <AnimatedNavItem
+                                  href={href}
+                                  active={isActivePath(href)}
+                                  onClick={closeMenu}
+                                  className="block"
+                                >
+                                  {label}
+                                </AnimatedNavItem>
                         </li>
                       ))}
                     </ul>

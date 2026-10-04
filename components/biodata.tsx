@@ -4,22 +4,22 @@ type BiodataItem = {
   description?: string;
 };
 
-const focusAreas: BiodataItem[] = [
+const education: BiodataItem[] = [
   {
-    period: '01',
-    title: 'Frontend engineering',
+    period: '2019-2023',
+    title: 'Diploma in Computer Science and Engineering',
     description:
-      'React, Next.js, TypeScript, Tailwind CSS, accessibility, and responsive UI development.',
+      'National Polytechnic Institute of Faridpur, Dhaka, Bangladesh.',
   },
   {
-    period: '02',
-    title: 'Full-stack applications',
+    period: '2024-Present',
+    title: 'Bachelor of Science in Computer Science and Engineering',
     description:
-      'Node.js APIs, database integrations, authentication flows, and production-ready application structure.',
+      'Southeast University, Dhaka, Bangladesh. Focused on software development, algorithms, and system design.',
   },
 ];
 
-const services: BiodataItem[] = [
+const experience: BiodataItem[] = [
   {
     period: '01',
     title: 'Websites and landing pages',
@@ -99,8 +99,8 @@ export function Biodata() {
   return (
     <div className="pt-24 md:pt-32">
       <div className="relative z-10 grid gap-20 md:grid-cols-2 md:gap-x-16 md:gap-y-24">
-        <BiodataColumn title="Focus" items={focusAreas} />
-        <BiodataColumn title="Services" items={services} />
+        <BiodataColumn title="Education" items={education} />
+        <BiodataColumn title="Experience" items={experience} />
         <BiodataColumn title="Interests" items={interests} />
         <BiodataColumn title="References" items={references} />
       </div>
