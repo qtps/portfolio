@@ -4,6 +4,8 @@
   --color-coral: #ff534a;
   --color-ink: #111111;
   --color-cream: #f1f1f0;
+  --font-roboto: var(--font-roboto), Verdana, sans-serif;
+  --font-verdana: Verdana, Geneva, sans-serif;
 }
 
 @layer base {
@@ -12,6 +14,9 @@
   }
 
   body {
-    @apply overflow-x-hidden bg-cream text-[#333];
+    overflow-x: hidden;
+    background-color: var(--color-cream);
+    color: #333;
+    font-family: var(--font-roboto), Verdana, serif;
   }
 }

@@ -3,11 +3,11 @@ import { SectionTitle } from "./section-title";
 
 export function ExperienceSection() {
   const details = [
-    ["Age", "22"],
-    ["Residence", "United States"],
-    ["Address", "A City, Florida, 32104"],
-    ["E-mail", "hello@yourwebsite.com"],
-    ["Phone", "+2345 344 678 563"],
+    ["Age", "26"],
+    ["Residence", "Bangladesh"],
+    ["Address", "Tejgaon, Dhaka, Bangladesh"],
+    ["E-mail", "muradsheakh@icloud.com"],
+    ["Phone", "+8801701979554"],
   ];
   return (
     <section id="experience" className="py-28">

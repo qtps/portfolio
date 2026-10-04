@@ -1,8 +1,9 @@
 export function HeroSection() {
   const services = [
-    ["01", "UI/UX Design"],
-    ["02", "Illustration"],
-    ["03", "Graphic Design"],
+    ["01", "Frontend Development", "Building responsive and interactive user interfaces with modern web technologies."],
+    ["02", "Backend & API Integration", "Developing robust backend systems and integrating APIs for seamless data flow."],
+    ["03", "Full-Stack Solutions", "Creating complete web applications from the frontend to the backend."],
+
   ];
   return (
     <section
@@ -13,7 +14,7 @@ export function HeroSection() {
         <div className="text-center">
           <img
             src="/images/banner-image.png"
-            alt="Julia Stiles"
+            alt="Murad Hossain"
             className="mx-auto w-full max-w-lg"
           />
         </div>
@@ -22,19 +23,19 @@ export function HeroSection() {
             Designer / Developer
           </span>
           <h1 className="mt-5 text-7xl font-bold leading-none tracking-tight text-ink md:text-9xl">
-            Julia
+            Murad
             <br />
-            Stiles
+            Hossain
           </h1>
         </div>
       </div>
       <div className="mt-20 grid gap-8 md:grid-cols-4">
-        {services.map(([number, title]) => (
+        {services.map(([number, title , description]) => (
           <div key={number}>
             <span className="text-sm text-gray-500">{number}</span>
             <h3 className="mt-3 text-xl font-bold text-ink">{title}</h3>
             <p className="mt-3 text-gray-600">
-              At in proin consequat ut cursus venenatis sapien.
+              {description}
             </p>
           </div>
         ))}

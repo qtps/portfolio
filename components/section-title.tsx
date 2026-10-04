@@ -1,14 +1,16 @@
 import type { ReactNode } from "react";
 
+type SectionTitleProps = Readonly<{
+  eyebrow: string;
+  title: string;
+  children?: ReactNode;
+}>;
+
 export function SectionTitle({
   eyebrow,
   title,
   children,
-}: {
-  eyebrow: string;
-  title: string;
-  children?: ReactNode;
-}) {
+}: SectionTitleProps) {
   return (
     <div className="mx-auto mb-16 max-w-2xl">
       <span className="text-sm uppercase tracking-[0.2em] text-gray-500">

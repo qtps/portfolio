@@ -18,11 +18,11 @@ export const portfolio: PortfolioItem[] = [
 ];
 
 export const skills: Skill[] = [
-  { name: "Adobe Photoshop", value: 90 },
-  { name: "Adobe Illustrator", value: 75 },
-  { name: "Figma", value: 80 },
-  { name: "Adobe After Effect", value: 70 },
-  { name: "Photography", value: 95 },
+  { name: "React.js / Next.js", value: 90 },
+  { name: "JavaScript / TypeScript", value: 85 },
+  { name: "GSAP Animations / Tailwind CSS", value: 80 },
+  { name: "Node.js / Express.js", value: 95 },
+  { name: "PostgreSQL & MongoDB", value: 75 },
 ];
 
 export const faq = [
