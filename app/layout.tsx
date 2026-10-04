@@ -29,9 +29,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               (() => {
-                const savedTheme = localStorage.getItem("portfolio-theme");
                 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+                if (prefersDark) {
                   document.documentElement.classList.add("dark");
                 }
               })();

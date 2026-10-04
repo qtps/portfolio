@@ -203,7 +203,7 @@ export function ContactSection() {
                   id="contact-name"
                   name="name"
                   placeholder="Your Full Name"
-                  className="focus:border-ink w-full rounded-md border border-gray-300 p-4 text-gray-800 transition outline-none dark:text-gray-100"
+                  className="focus:border-ink w-full rounded-md border border-gray-300 p-4 text-ink transition outline-none"
                   required
                 />
               </div>
@@ -216,7 +216,7 @@ export function ContactSection() {
                   id="contact-email"
                   name="email"
                   placeholder="Your Email Address"
-                  className="focus:border-ink w-full rounded-md border border-gray-300 p-4 text-gray-800 transition outline-none dark:text-gray-100"
+                  className="focus:border-ink w-full rounded-md border border-gray-300 p-4 text-ink transition outline-none"
                   required
                 />
               </div>
@@ -229,7 +229,7 @@ export function ContactSection() {
                   id="contact-message"
                   name="message"
                   placeholder="Your Message"
-                  className="focus:border-ink w-full resize-y rounded-md border border-gray-300 p-4 text-gray-800 transition outline-none dark:text-gray-100"
+                  className="focus:border-ink w-full resize-y rounded-md border border-gray-300 p-4 text-ink transition outline-none"
                   required
                 />
               </div>

@@ -48,7 +48,6 @@ export function ThemeToggle() {
   const toggleTheme = () => {
     const nextDarkMode = !darkMode;
     document.documentElement.classList.toggle('dark', nextDarkMode);
-    localStorage.setItem('portfolio-theme', nextDarkMode ? 'dark' : 'light');
     setDarkMode(nextDarkMode);
   };
 
