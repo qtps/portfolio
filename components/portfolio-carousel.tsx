@@ -150,7 +150,7 @@ export function PortfolioCarousel({ items }: PortfolioCarouselProps) {
                     src={`/images/${item.image}`}
                     alt={item.title}
                     draggable={false}
-                    className="aspect-[4/5] w-full object-cover"
+                    className="aspect-4/5 w-full object-cover"
                   />
                 </Link>
               </div>

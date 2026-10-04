@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 
 export function ThemeToggle() {
@@ -8,7 +8,7 @@ export function ThemeToggle() {
   const toggleRef = useRef<HTMLButtonElement>(null);
   const knobRef = useRef<HTMLSpanElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setDarkMode(document.documentElement.classList.contains('dark'));
   }, []);
 

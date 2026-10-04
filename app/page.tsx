@@ -1,4 +1,4 @@
-import { AboutSection } from '../components/about-section';
+import { about as About } from '../components/about';
 import { ContactSection } from '../components/contact-section';
 import { ExperienceSection } from '../components/experience-section';
 import { HeroSection } from '../components/hero-section';
@@ -8,7 +8,7 @@ export default function Page() {
   return (
     <>
       <HeroSection />
-      <AboutSection />
+      <About />
       <ExperienceSection />
       <PortfolioSection />
       <ContactSection />

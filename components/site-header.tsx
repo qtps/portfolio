@@ -134,11 +134,14 @@ export function SiteHeader() {
       >
         <div className="flex h-full flex-col justify-between">
           <div>
-            <div>
-              <Link href="/" onClick={closeMenu} className="sidebar-item block">
-                <h2 className="text-ink font-verdana text-6xl font-extrabold">
-                  Murad.
-                </h2>
+            <div className="">
+              <Link
+                href="/"
+                onClick={closeMenu}
+                className="sidebar-item flex items-baseline gap-1"
+              >
+                <Image src="/logo.png" alt="Logo" width={60} height={40} />
+                <p className="text-4xl font-bold dark:text-black">urad</p>
               </Link>
             </div>
             <nav className="mt-14">
@@ -166,14 +169,14 @@ export function SiteHeader() {
                     <ul className="space-y-2 py-3 pl-4 text-sm text-gray-600">
                       {pageLinks.map(({ label, href }) => (
                         <li key={href}>
-                                <AnimatedNavItem
-                                  href={href}
-                                  active={isActivePath(href)}
-                                  onClick={closeMenu}
-                                  className="block"
-                                >
-                                  {label}
-                                </AnimatedNavItem>
+                          <AnimatedNavItem
+                            href={href}
+                            active={isActivePath(href)}
+                            onClick={closeMenu}
+                            className="block"
+                          >
+                            {label}
+                          </AnimatedNavItem>
                         </li>
                       ))}
                     </ul>

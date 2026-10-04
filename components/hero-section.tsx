@@ -2,7 +2,6 @@ import { SectionNumber } from './section-number';
 import { AnimatedHeading } from './animations/animated-heading';
 import { AnimatedHeroImage } from './animations/animated-hero-image';
 import { AnimatedStagger } from './animations/animated-stagger';
-import { Biodata } from './biodata';
 
 export function HeroSection() {
   const services = [
@@ -25,9 +24,10 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen flex-col justify-center overflow-hidden py-20"
+      className="relative flex min-h-auto flex-col justify-center overflow-hidden py-20"
     >
       <SectionNumber number="01" />
+
       <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
         <div className="text-center">
           <AnimatedHeroImage
@@ -76,7 +76,6 @@ export function HeroSection() {
           </a>
         </div>
       </AnimatedStagger>
-      <Biodata />
     </section>
   );
 }

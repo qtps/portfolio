@@ -8,7 +8,7 @@ export function SectionNumber({ number }: SectionNumberProps) {
   return (
     <span
       aria-hidden="true"
-      className="text-ink/[0.04] pointer-events-none absolute right-[-1rem] bottom-[-1.5rem] z-0 text-[24rem] leading-none font-bold md:text-[30rem]"
+      className="text-ink/4 pointer-events-none absolute -right-4 -bottom-6 z-0 text-[24rem] leading-none font-bold md:text-[30rem]"
     >
       <span className="md:hidden">{compactNumber}</span>
       <span className="hidden md:inline">{number}</span>

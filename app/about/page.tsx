@@ -1,10 +1,10 @@
-import { AboutSection } from '../../components/about-section';
+import { about as About } from '../../components/about';
 import { PageShell } from '../../components/page-shell';
 
 export default function AboutPage() {
   return (
     <PageShell focusId="about">
-      <AboutSection />
+      <About />
     </PageShell>
   );
 }
