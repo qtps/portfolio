@@ -192,40 +192,46 @@ export function SiteHeader() {
             >
               murad8617@gmail.com
             </a>
-            <div className="flex gap-4 py-5 font-bold">
+
+            <div className="flex items-center gap-4 py-5 font-bold">
               <a href="https://www.facebook.com/murad2077">
                 <Image
                   src="/images/facebook.svg"
                   alt="Facebook"
-                  width={25}
-                  height={25}
+                  width={28}
+                  height={28}
+                  className="social-icon transition-all duration-200 hover:opacity-80"
                 />
               </a>
               <a href="https://x.com/Murad_Hossain20">
                 <Image
-                  src="/images/x.png"
+                  src="/images/x.svg"
                   alt="Twitter"
                   width={25}
                   height={25}
+                  className="social-icon transition-all duration-200 hover:opacity-80"
                 />
               </a>
               <a href="https://www.linkedin.com/in/muradsheakh/">
                 <Image
-                  src="/images/linkedin.png"
+                  src="/images/linkedin.svg"
                   alt="LinkedIn"
                   width={25}
                   height={25}
+                  className="social-icon transition-all duration-200 hover:opacity-80"
                 />
               </a>
               <a href="https://github.com/qtps">
                 <Image
                   src="/images/github.svg"
                   alt="GitHub"
-                  width={25}
-                  height={25}
+                  width={28}
+                  height={28}
+                  className="social-icon transition-all duration-200 hover:opacity-80"
                 />
               </a>
             </div>
+
             <p className="border-t border-gray-200 pt-5 text-sm text-gray-500">
               Built by <span className="text-ink">Murad Hossain</span>
             </p>

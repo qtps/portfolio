@@ -13,6 +13,15 @@
     color-scheme: light;
   }
 
+  /* SVG Icon Color Fix for Light/Dark mode */
+  .social-icon {
+    filter: brightness(0); /* Light mode-এ জোর করে Black বানাবে */
+  }
+
+  .dark .social-icon {
+    filter: brightness(0) invert(1); /* Dark mode-এ Pure White বানাবে */
+  }
+
   .dark {
     color-scheme: dark;
     --color-coral: #ff7169;
