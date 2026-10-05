@@ -13,7 +13,7 @@ export function ExperienceSection() {
   ];
   return (
     <section id="experience" className="relative overflow-hidden py-28">
-      <SectionNumber number="03" />
+      <SectionNumber number="02" />
       <div className="relative z-10">
         <SectionTitle
           eyebrow="Experience & skills"

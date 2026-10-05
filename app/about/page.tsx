@@ -1,10 +1,13 @@
-import { about as About } from '../../components/about';
-import { PageShell } from '../../components/page-shell';
+import About from '../../components/About';
+import { Biodata } from '../../components/Biodata';
 
-export default function AboutPage() {
+const page = () => {
   return (
-    <PageShell focusId="about">
+    <div>
       <About />
-    </PageShell>
+      <Biodata />
+    </div>
   );
-}
+};
+
+export default page;

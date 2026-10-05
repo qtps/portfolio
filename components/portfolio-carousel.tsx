@@ -65,16 +65,19 @@ export function PortfolioCarousel({ items }: PortfolioCarouselProps) {
       return;
     }
 
-    dragDistance.current = event.clientX - dragStart.current;
+    const distance = event.clientX - dragStart.current;
+    dragDistance.current = distance;
 
-    if (Math.abs(dragDistance.current) > 8 && !isDragging) {
+    if (Math.abs(distance) > 8 && !isDragging) {
       setIsDragging(true);
       event.currentTarget.setPointerCapture(event.pointerId);
       event.preventDefault();
     }
 
-    setDragOffset(dragDistance.current);
-    if (Math.abs(dragDistance.current) > 8) {
+    const isAtFirstPage = activePage === 0 && distance > 0;
+    const isAtLastPage = activePage === pageCount - 1 && distance < 0;
+    setDragOffset(isAtFirstPage || isAtLastPage ? 0 : distance);
+    if (Math.abs(distance) > 8) {
       suppressClick.current = true;
     }
   };
@@ -124,7 +127,7 @@ export function PortfolioCarousel({ items }: PortfolioCarouselProps) {
         onDragStart={(event) => event.preventDefault()}
       >
         <div
-          className={`flex ${isDragging ? '' : 'transition-transform duration-500 ease-out'}`}
+          className={`flex ${isDragging ? '' : 'transition-transform duration-300 ease-out'}`}
           style={{
             gap: '2rem',
             transform: `translate3d(-${activePage * (cardWidth + 32) - dragOffset}px, 0, 0)`,

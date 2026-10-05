@@ -1,3 +1,6 @@
+import { AnimatedStagger } from './animations/animated-stagger';
+import { SectionNumber } from './section-number';
+
 type BiodataItem = {
   period: string;
   title: string;
@@ -95,19 +98,19 @@ function BiodataColumn({
   );
 }
 
-export function about() {
+export function Biodata() {
   return (
     <div className="pt-24 md:pt-32">
       <h2 className="pb-4 tracking-wider text-gray-500">BIODATA</h2>
       <div className="relative z-10 grid gap-20 md:grid-cols-2 md:gap-x-16 md:gap-y-24">
+        <SectionNumber number="05" />
         <BiodataColumn title="Education" items={education} />
         <BiodataColumn title="Experience" items={experience} />
         <BiodataColumn title="Interests" items={interests} />
         <BiodataColumn title="References" items={references} />
-        <SectionNumber number="02" />
       </div>
     </div>
   );
 }
-import { AnimatedStagger } from './animations/animated-stagger';
-import { SectionNumber } from './section-number';
+
+export default Biodata;

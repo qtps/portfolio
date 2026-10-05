@@ -7,7 +7,7 @@ import { PortfolioCarousel } from './portfolio-carousel';
 export function PortfolioSection() {
   return (
     <section id="portfolio" className="relative overflow-hidden py-28">
-      <SectionNumber number="04" />
+      <SectionNumber number="03" />
       <div className="relative z-10">
         <SectionTitle eyebrow="Some of my recent works" title="Portfolio">
           A selection of web interfaces, product experiences, and technical case

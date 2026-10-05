@@ -153,14 +153,14 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="relative overflow-hidden py-28">
-      <SectionNumber number="05" />
+      <SectionNumber number="06" />
       <div className="relative z-10">
         <SectionTitle eyebrow="Personal Info" title="Contact Me">
           Have a project in mind? Let&apos;s talk about how we can make it
           happen.
         </SectionTitle>
 
-        <AnimatedStagger className="reveal mt-12 grid gap-16 md:grid-cols-2">
+        <div className="reveal mt-12 grid gap-16 md:grid-cols-2">
           {/* Left Side: FAQ Section */}
           <div>
             <AnimatedStagger stagger={0.12}>
@@ -186,74 +186,84 @@ export function ContactSection() {
 
           {/* Right Side: Contact Form Section */}
           <div>
-            <h3 className="text-ink text-3xl leading-tight font-bold">
-              Feel free to send me a message or any word of appreciation.
-            </h3>
+            <AnimatedStagger>
+              <h3 className="text-ink text-3xl leading-tight font-bold">
+                Feel free to send me a message or any word of appreciation.
+              </h3>
+            </AnimatedStagger>
 
-            <form
-              onSubmit={submitContactForm}
-              className="mt-8 flex flex-col gap-4"
-            >
-              <div>
-                <label htmlFor="contact-name" className="sr-only">
-                  Your full name
-                </label>
-                <input
-                  type="text"
-                  id="contact-name"
-                  name="name"
-                  placeholder="Your Full Name"
-                  className="focus:border-ink text-ink w-full rounded-md border border-gray-300 p-4 transition outline-none"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="contact-email" className="sr-only">
-                  Your email address
-                </label>
-                <input
-                  type="email"
-                  id="contact-email"
-                  name="email"
-                  placeholder="Your Email Address"
-                  className="focus:border-ink text-ink w-full rounded-md border border-gray-300 p-4 transition outline-none"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="contact-message" className="sr-only">
-                  Your message
-                </label>
-                <textarea
-                  rows={5}
-                  id="contact-message"
-                  name="message"
-                  placeholder="Your Message"
-                  className="focus:border-ink text-ink w-full resize-y rounded-md border border-gray-300 p-4 transition outline-none"
-                  required
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full rounded-sm bg-[#1e232a] py-4 text-center font-semibold text-white transition hover:bg-black disabled:cursor-not-allowed disabled:opacity-60"
+            <form onSubmit={submitContactForm} className="mt-8">
+              <AnimatedStagger
+                className="flex flex-col gap-4"
+                delay={0.1}
+                stagger={0.1}
+                duration={0.55}
+                distance={20}
               >
-                {isSubmitting ? 'Sending...' : 'Submit'}
-              </button>
-              {formMessage && (
-                <output className="text-sm text-green-600">
-                  {formMessage}
-                </output>
-              )}
-              {formError && (
-                <p role="alert" className="text-sm text-red-600">
-                  {formError}
-                </p>
-              )}
+                <div>
+                  <label htmlFor="contact-name" className="sr-only">
+                    Your full name
+                  </label>
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    placeholder="Your Full Name"
+                    className="focus:border-ink text-ink w-full rounded-md border border-gray-300 p-4 transition outline-none"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contact-email" className="sr-only">
+                    Your email address
+                  </label>
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    placeholder="Your Email Address"
+                    className="focus:border-ink text-ink w-full rounded-md border border-gray-300 p-4 transition outline-none"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contact-message" className="sr-only">
+                    Your message
+                  </label>
+                  <textarea
+                    rows={5}
+                    id="contact-message"
+                    name="message"
+                    placeholder="Your Message"
+                    className="focus:border-ink text-ink w-full resize-y rounded-md border border-gray-300 p-4 transition outline-none"
+                    required
+                  />
+                </div>
+                <div>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="bg-ink hover:bg-coral focus-visible:ring-coral w-full rounded-sm py-4 text-center font-semibold text-white transition-[background-color,transform] duration-200 hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+                  >
+                    {isSubmitting ? 'Sending...' : 'Submit'}
+                  </button>
+                </div>
+              </AnimatedStagger>
+              <div className="mt-4 flex flex-col gap-4">
+                {formMessage && (
+                  <output className="text-sm text-green-600">
+                    {formMessage}
+                  </output>
+                )}
+                {formError && (
+                  <p role="alert" className="text-sm text-red-600">
+                    {formError}
+                  </p>
+                )}
+              </div>
             </form>
           </div>
-        </AnimatedStagger>
+        </div>
       </div>
     </section>
   );
