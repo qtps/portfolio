@@ -27,9 +27,6 @@ export default async function PortfolioDetailPage({
       <section id="portfolio-detail" className="py-24 md:py-32">
         <div className="mb-16 grid gap-10 md:grid-cols-[1fr_1.4fr] md:items-end">
           <div>
-            <span className="text-sm tracking-[0.2em] text-gray-500 uppercase">
-              Biodata
-            </span>
             <AnimatedHeading
               as="h1"
               className="text-ink mt-4 text-5xl leading-none font-bold tracking-tight md:text-7xl"

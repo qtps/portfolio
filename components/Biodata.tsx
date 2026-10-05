@@ -74,9 +74,7 @@ function BiodataColumn({
   return (
     <AnimatedStagger className="relative z-10 space-y-8" stagger={0.14}>
       {title === 'Focus' && (
-        <span className="text-sm tracking-[0.2em] text-gray-500 uppercase">
-          Biodata
-        </span>
+        <span className="text-sm tracking-[0.2em] text-gray-500 uppercase"></span>
       )}
       <h2 className="text-ink text-5xl leading-none font-bold tracking-tight md:text-6xl">
         {title}

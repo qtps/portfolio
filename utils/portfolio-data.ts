@@ -30,34 +30,34 @@ export const pageLinks = [
 export const portfolio: PortfolioItem[] = [
   {
     slug: 'responsive-portfolio',
-    image: 'port-item1.jpg',
-    title: 'Responsive portfolio interface',
+    image: 'port-item1.png',
+    title: 'Comprehensive Digital Solutions',
     format: 'web',
     client: 'Personal project',
     date: 'Recent',
-    projectUrl: '#',
+    projectUrl: 'https://nexgen-theta-seven.vercel.app',
     description:
-      'A responsive portfolio experience focused on clear content hierarchy, smooth motion, and accessible navigation.',
+      'A comprehensive digital solutions approach that combines modern design with functional development.',
     gallery: [
-      'portfolio-image-1.jpg',
-      'portfolio-thumbnail-1.jpg',
-      'portfolio-thumbnail-2.jpg',
+      'portfolio-image-1.png',
+      'portfolio-thumbnail-1.png',
+      'portfolio-thumbnail-2.png',
     ],
   },
   {
     slug: 'product-dashboard',
-    image: 'port-item2.jpg',
-    title: 'Product dashboard concept',
+    image: 'port-item2.png',
+    title: 'Financial Future With Savi',
     format: 'web',
     client: 'Concept project',
     date: 'Recent',
-    projectUrl: '#',
+    projectUrl: 'https://savi-roan.vercel.app',
     description:
-      'A dashboard concept for presenting product data through a simple, responsive, and reusable interface.',
+      'A financial dashboard concept that provides users with a clear overview of their financial health and future planning.',
     gallery: [
-      'portfolio-image-2.jpg',
-      'portfolio-thumbnail-3.jpg',
-      'portfolio-thumbnail-4.jpg',
+      'portfolio-image-2.png',
+      'portfolio-thumbnail-3.png',
+      'portfolio-thumbnail-4.png',
     ],
   },
   {
