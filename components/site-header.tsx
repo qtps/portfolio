@@ -138,10 +138,10 @@ export function SiteHeader() {
               <Link
                 href="/"
                 onClick={closeMenu}
-                className="sidebar-item flex items-baseline gap-1"
+                className="sidebar-item flex items-center"
               >
                 <Image src="/logo.png" alt="Logo" width={60} height={40} />
-                <p className="text-4xl font-bold dark:text-black">urad</p>
+                <p className="text-4xl font-bold dark:text-red-600">urad</p>
               </Link>
             </div>
             <nav className="mt-14">
