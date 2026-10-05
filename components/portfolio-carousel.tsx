@@ -1,6 +1,12 @@
 'use client';
 
-import { useEffect, useRef, useState, type PointerEvent } from 'react';
+import {
+  useEffect,
+  useRef,
+  useState,
+  type PointerEvent,
+  type WheelEvent,
+} from 'react';
 import Link from 'next/link';
 import type { PortfolioItem } from '../utils/portfolio-data';
 
@@ -114,6 +120,23 @@ export function PortfolioCarousel({ items }: PortfolioCarouselProps) {
     }
   };
 
+  const handleWheel = (event: WheelEvent<HTMLDivElement>) => {
+    const delta =
+      Math.abs(event.deltaY) >= Math.abs(event.deltaX)
+        ? event.deltaY
+        : event.deltaX;
+
+    if (delta === 0) {
+      return;
+    }
+
+    event.preventDefault();
+    const direction = delta > 0 ? 1 : -1;
+    setActivePage((page) =>
+      Math.min(Math.max(page + direction, 0), pageCount - 1),
+    );
+  };
+
   return (
     <div>
       <div
@@ -122,8 +145,9 @@ export function PortfolioCarousel({ items }: PortfolioCarouselProps) {
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerCancel}
+        onWheelCapture={handleWheel}
         ref={viewportRef}
-        style={{ touchAction: 'none' }}
+        style={{ overscrollBehavior: 'contain', touchAction: 'none' }}
         onDragStart={(event) => event.preventDefault()}
       >
         <div

@@ -300,12 +300,11 @@ export function PortfolioMasonry() {
       </div>
 
       {zoomedImage && (
-        <div
-          className="fixed inset-0 z-[60] flex items-center justify-center overflow-auto bg-black/90 p-6 md:p-10"
-          role="dialog"
-          aria-modal="true"
+        <dialog
+          open
+          className="fixed inset-0 z-60 m-0 flex h-full w-full items-center justify-center overflow-auto border-0 bg-black/90 p-6 md:p-10"
           aria-label={`${zoomedImage.title} enlarged preview`}
-          onClick={() => setZoomedImage(null)}
+          onCancel={() => setZoomedImage(null)}
         >
           <button
             type="button"
@@ -319,9 +318,8 @@ export function PortfolioMasonry() {
             src={`/images/${zoomedImage.image}`}
             alt={zoomedImage.title}
             className="max-h-[92vh] max-w-[92vw] object-contain"
-            onClick={(event) => event.stopPropagation()}
           />
-        </div>
+        </dialog>
       )}
     </main>
   );

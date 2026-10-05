@@ -58,7 +58,7 @@ export function ThemeToggle() {
       onClick={toggleTheme}
       aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
       aria-pressed={darkMode}
-      className="fixed top-6 right-24 z-50 flex h-10 w-18 items-center rounded-full border bg-[#ffffff] p-1 shadow-[0_8px_24px_rgba(17,17,17,0.12)] transition-shadow hover:shadow-[0_10px_28px_rgba(255,83,74,0.25)] lg:right-8"
+      className="bg-cream fixed top-6 right-24 z-50 flex h-10 w-18 items-center rounded-full border p-1 shadow-[0_8px_24px_rgba(17,17,17,0.12)] transition-shadow hover:shadow-[0_10px_28px_rgba(255,83,74,0.25)] lg:right-8"
     >
       <span
         ref={knobRef}
