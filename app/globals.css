@@ -3,7 +3,7 @@
 @theme {
   --color-coral: #ff534a;
   --color-ink: #111111;
-  --color-cream: #f1f1f0;
+  --color-cream: #ffffff;
   --font-roboto: var(--font-roboto), Verdana, sans-serif;
   --font-verdana: Verdana, Geneva, sans-serif;
 }
@@ -36,7 +36,7 @@
   }
 
   .dark .bg-white {
-    background-color: #1f2937 !important;
+    background-color: #111827 !important;
   }
 
   .dark .bg-ink {

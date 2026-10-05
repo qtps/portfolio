@@ -15,6 +15,7 @@ type AnimatedHeadingProps = Readonly<{
   className?: string;
   animateOnLoad?: boolean;
   delay?: number;
+  replayOnScroll?: boolean;
 }>;
 
 export function AnimatedHeading({
@@ -23,6 +24,7 @@ export function AnimatedHeading({
   className,
   animateOnLoad = false,
   delay = 0,
+  replayOnScroll = false,
 }: AnimatedHeadingProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -50,15 +52,16 @@ export function AnimatedHeading({
           duration: 1,
           delay,
           ease: 'power4.out',
-          ...(animateOnLoad
-            ? {}
-            : {
-                scrollTrigger: {
+          scrollTrigger:
+            replayOnScroll || !animateOnLoad
+              ? {
                   trigger: wrapper,
                   start: 'top 88%',
-                  toggleActions: 'play none none reset',
-                },
-              }),
+                  toggleActions: replayOnScroll
+                    ? 'restart none restart reset'
+                    : 'play none none reset',
+                }
+              : undefined,
         },
       );
 
@@ -66,7 +69,7 @@ export function AnimatedHeading({
     }, wrapper);
 
     return () => context.revert();
-  }, [animateOnLoad, delay]);
+  }, [animateOnLoad, delay, replayOnScroll]);
 
   return (
     <div ref={wrapperRef} className="overflow-hidden">

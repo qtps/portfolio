@@ -34,6 +34,7 @@ export function HeroSection() {
             src="/images/banner-image.png"
             alt="Murad Hossain"
             className="mx-auto w-full max-w-lg"
+            replayOnScroll
           />
         </div>
         <div>
@@ -45,10 +46,11 @@ export function HeroSection() {
             className="text-ink mt-5 text-7xl leading-none font-bold tracking-tight md:text-9xl"
             animateOnLoad
             delay={0.45}
+            replayOnScroll
           >
             Murad
             <br />
-            Hossain
+            <span className="text-coral">Hossain</span>
           </AnimatedHeading>
         </div>
       </div>
